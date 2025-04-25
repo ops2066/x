@@ -4,7 +4,7 @@ cd /opt/www/web
 sudo pnpm install 
 sudo chown -R www-data:www-data /opt/www
 sudo chmod -R 755 /opt/www
-pm2 reload ecosystem.config.js
+sudo pm2 reload ecosystem.config.js
 
 cd /opt/dow/
 timestamp=$(date +"%Y-%m-%d-%H-%M")
