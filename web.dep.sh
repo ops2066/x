@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo tar -zxvf /opt/dow/build.tar.gz -C /opt/www/web
 cd /opt/www/web
+sudo pnpm install 
 sudo chown -R www-data:www-data /opt/www
 sudo chmod -R 755 /opt/www
 pm2 reload ecosystem.config.js
