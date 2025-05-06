@@ -10,6 +10,4 @@ new_file="${timestamp}-${src_file}"
 mv "$src_file" "$new_file"
 echo "new file name:$new_file"
 sudo systemctl restart bot-api.service
-sudo systemctl status bot-api.service
 sudo systemctl restart bot-admin.service
-sudo systemctl status bot-admin.service
