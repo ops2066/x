@@ -49,13 +49,6 @@ systemctl restart sshd
 
 sudo apt install -y nftables 
 sudo systemctl enable --now nftables
-sudo systemctl disable --now iptables
-sudo systemctl disable --now netfilter-persistent
-sudo apt remove -y iptables-persistent netfilter-persistent
-sudo systemctl disable --now ufw
-sudo apt remove -y ufw
-sudo systemctl disable --now firewalld
-sudo apt remove -y firewalld
 
 sudo bash -c 'cat > /etc/nftables.conf' <<'EOF'
 table inet filter {
@@ -75,3 +68,12 @@ EOF
 sudo nft flush ruleset 
 sudo nft -f /etc/nftables.conf 
 sudo systemctl restart nftables.service
+
+
+sudo systemctl disable --now iptables
+sudo systemctl disable --now netfilter-persistent
+sudo apt remove -y iptables-persistent netfilter-persistent
+sudo systemctl disable --now ufw
+sudo apt remove -y ufw
+sudo systemctl disable --now firewalld
+sudo apt remove -y firewalld
